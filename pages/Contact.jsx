@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Contact.css";
+import "../styles/Modal.css"
 import ContactLeft from "../assets/ContactLeft.jpg";
 
-
 function Contact() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="contact">
-
       <div
         className="leftSide"
         style={{ backgroundImage: `url(${ContactLeft})` }}
@@ -15,7 +25,7 @@ function Contact() {
       <div className="rightSide">
         <h1>Contact Us</h1>
         <p>All expressions of interest need to be sent below!</p>
-        <form id="contact-form" method="POST">
+        <form id="contact-form" method="POST" onSubmit={handleSubmit}>
           <label htmlFor="name">Full Name</label>
           <input name="name" placeholder="Enter full name..." type="text" />
           <label htmlFor="email">Email</label>
@@ -27,8 +37,20 @@ function Contact() {
             name="message"
             required
           ></textarea>
-          <button type="submit"> Send Message</button>
+          <button type="submit">Send Message</button>
         </form>
+
+        {showModal && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close" onClick={closeModal}>
+                &times;
+              </span>
+              <h2>Thank you for contacting us!</h2>
+              <p>We will get back to you as soon as possible.</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
