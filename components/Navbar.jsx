@@ -21,8 +21,8 @@ function Navbar() {
         <Link to="/Map"> Find Us </Link>
         <Link to="/leaderboard"> Leaderboard </Link>
         <Link to="/ImageSlider"> Promos </Link>
+        <Link to="/ImageSlider2"> Watch Us Play! </Link>
         <Link to="/contact"> Contact </Link>
-
       </div>
     </div>
   );

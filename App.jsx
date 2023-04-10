@@ -7,6 +7,8 @@ import Contact from "./pages/Contact";
 import Leaderboard from "./pages/Leaderboard";
 import Map from "./pages/Map";
 import ImageSlider from "./components/ImageSlider";
+
+
 import ErrorBoundary from "./components/ErrorBoundary";
 
 
